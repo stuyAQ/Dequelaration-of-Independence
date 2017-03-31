@@ -2,9 +2,10 @@ public interface Deque<T> {
 
     void addLast(T e);
     void addFirst(T e);
-    T removeFirst();
+    T pollLast();
     T pollFirst();
-    T getFirst();
+    T peekLast();
     T peekFirst();
+    int size()
 
 }
