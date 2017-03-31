@@ -6,6 +6,6 @@ public interface Deque<T> {
     T pollFirst();
     T peekLast();
     T peekFirst();
-    int size()
+    int size();
 
 }
