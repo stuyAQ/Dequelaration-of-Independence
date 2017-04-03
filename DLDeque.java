@@ -19,33 +19,43 @@ public class DLDeque<T> implements Deque<T> {
 	    _end = _end.getNext();
 	}
     }
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public void addFirst(T e) {
+	if (_end == null) {
+	    _end = new DLLNode<T>(e,null,null);
+	    _front = _end;
+	}
+	else {
+	    _front.setPrev(new DLLNode<T>(e,null,null));
+	    _front = _front.getPrev();
+	}
     }
 
     public T pollLast() {
-
+	T retVal = _end.getCargo();
+	_end = _end.getNext();
+	return retVal;
     }
 
     public T pollFirst() {
-	T retVal = _front.getValue();
-	_front = _front.getNext();
+	T retVal = _front.getCargo();
+	_front = _front.getPrev();
 	return retVal;
     }
 
     public T peekLast() {
-	
+	return _end.getCargo();
     }
     
     
     public T peekFirst() {
-	return _front.getValue();
+	return _front.getCargo();
     }
 
     public int size() {
 	return _size;
     }
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     public String toString(){
 	String ret = "";
 	DLLNode tmp = _front;
