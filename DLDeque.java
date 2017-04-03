@@ -1,9 +1,9 @@
 public class DLDeque<T> implements Deque<T> {
 
-    private DLNode<T> _front, _end;
+    private DLLNode<T> _front, _end;
     private int _size;
 
-    public DLDeque<T>() {
+    public DLDeque() {
 	_front = null;
 	_end = null;
 	_size = 0;
@@ -11,11 +11,11 @@ public class DLDeque<T> implements Deque<T> {
 
     public void addLast(T e) {
 	if (_front == null) {
-	    _front = new LLNode<T>(enQVal,null);
+	    _front = new DLLNode<T>(e,null,null);
 	    _end = _front;
 	}
 	else {
-	    _end.setNext(new LLNode<T>(enQVal,null));
+	    _end.setNext(new DLLNode<T>(e,null,null));
 	    _end = _end.getNext();
 	}
     }
@@ -50,14 +50,14 @@ public class DLDeque<T> implements Deque<T> {
 	String ret = "";
 	DLLNode tmp = _front;
 	while ( tmp != null ){
-	    ret += tmp.getValue();
+	    ret += tmp.getCargo() + " ";
 	    tmp = tmp.getNext();
 	}
 	return ret;
     }
     
     public static void main(String[] args){
-	DLDeque<String> d = new DLQueue<String>(); // deque-lare variable
+	DLDeque<String> d = new DLDeque<String>(); // deque-lare variable
 	d.addLast("we");
 	d.addLast("hold");
 	d.addLast("these" );
