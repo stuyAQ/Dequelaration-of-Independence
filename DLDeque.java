@@ -19,7 +19,7 @@ public class DLDeque<T> implements Deque<T> {
 	    _end = _end.getNext();
 	}
     }
-
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public void addFirst(T e) {
     }
 
@@ -45,5 +45,26 @@ public class DLDeque<T> implements Deque<T> {
     public int size() {
 	return _size;
     }
-
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    public String toString(){
+	String ret = "";
+	DLLNode tmp = _front;
+	while ( tmp != null ){
+	    ret += tmp.getValue();
+	    tmp = tmp.getNext();
+	}
+	return ret;
+    }
+    
+    public static void main(String[] args){
+	DLDeque<String> d = new DLQueue<String>(); // deque-lare variable
+	d.addLast("we");
+	d.addLast("hold");
+	d.addLast("these" );
+	d.addLast("truths" );
+	d.addLast("to" );
+	d.addLast("be" );
+	d.addLast("self-evident");
+	System.out.println(d); // test toString()
+    }
 }
