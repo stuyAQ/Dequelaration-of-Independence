@@ -1,2 +1,2 @@
-# Dequeleration-of-Independence
+# Dequelaration-of-Independence
 LAB#02
