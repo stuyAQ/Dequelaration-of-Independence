@@ -33,13 +33,13 @@ public class DLDeque<T> implements Deque<T> {
 
     public T pollLast() {
 	T retVal = _end.getCargo();
-	_end = _end.getNext();
+	_end = _end.getPrev();
 	return retVal;
     }
 
     public T pollFirst() {
 	T retVal = _front.getCargo();
-	_front = _front.getPrev();
+	_front = _front.getNext();
 	return retVal;
     }
 
