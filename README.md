@@ -8,12 +8,12 @@ Period 5
 LAB#02
 
 ## Methods Chosen
-1. 'addLast(T e)'
-2. 'pollLast()'
-3. 'pollFirst()'
-4. 'peekLast()'
-5. 'peekFirst()'
-6.  'size()'
+1. `addLast(T e)`
+2. `pollLast()`
+3. `pollFirst()`
+4. `peekLast()`
+5. `peekFirst()`
+6.  `size()`
 
 ## Justification
 Deque is a queue, but in this case you are allowed to remove and add from BOTH sides.  The methods we chose are implementations of that idea.  addLast() and
