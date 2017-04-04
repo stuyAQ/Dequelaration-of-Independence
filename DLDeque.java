@@ -90,6 +90,7 @@ public class DLDeque<T> implements Deque<T> {
 	while( d.size() > 0 )
 	    System.out.println( d.pollFirst() );
 	System.out.println( d.pollFirst() );
+
 	System.out.println("testing addFirst()...");
 	d.addFirst("self-evident");
 	d.addFirst("be" );
@@ -99,6 +100,8 @@ public class DLDeque<T> implements Deque<T> {
 	d.addFirst("hold");
 	d.addFirst("we");
 	System.out.println(d);
+	while( d.size() > 0 )
+	System.out.println( d.pollLast() );
 
 
     }
