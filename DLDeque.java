@@ -11,8 +11,8 @@ public class DLDeque<T> implements Deque<T> {
 
     public void addLast(T e) {
 	if (_front == null) {
-	    _front = new DLLNode<T>(e,null,null);
-	    _end = _front;
+	    _end = new DLLNode<T>(e,null,null);
+	    _front = _end;
 	}
 	else {
 	    _end.setNext(new DLLNode<T>(e,null,null));
@@ -22,14 +22,14 @@ public class DLDeque<T> implements Deque<T> {
     }
     //*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public void addFirst(T e) {
-	if (_end == null) {
-	    _end = new DLLNode<T>(e,null,null);
-	    _front = _end;
+	if (_front == null) {
+	    _front = new DLLNode<T>(e,null,null);
+	    _end = _front;
 	}
 	else {
 	    _front.setPrev(new DLLNode<T>(e,null,null));
 	    _front = _front.getPrev();
-	}
+	    }
 	_size += 1;
     }
 
@@ -81,6 +81,17 @@ public class DLDeque<T> implements Deque<T> {
 	d.addLast("self-evident");
 	System.out.println(d); // test toString()
 	while( d.size() > 0 )
-	    System.out.println( d.pollFirst() );
+	System.out.println( d.pollFirst() );
+
+	d.addFirst("self-evident");
+	d.addFirst("be" );
+	d.addFirst("to" );
+	d.addFirst("truths" );
+	d.addFirst("these" );
+	d.addFirst("hold");
+	d.addFirst("we");
+	System.out.println(d);
+
+
     }
 }
