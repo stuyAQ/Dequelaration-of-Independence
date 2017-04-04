@@ -15,7 +15,7 @@ public class DLDeque<T> implements Deque<T> {
 	    _front = _end;
 	}
 	else {
-	    _end.setNext(new DLLNode<T>(e,null,null));
+	    _end.setNext(new DLLNode<T>(e,_end,null));
 	    _end = _end.getNext();
 	}
 	_size += 1;
@@ -34,6 +34,8 @@ public class DLDeque<T> implements Deque<T> {
     }
 
     public T pollLast() {
+	if ( _size == 0 )
+	    return null;
 	T retVal = _end.getCargo();
 	_end = _end.getPrev();
 	_size -= 1;
@@ -41,6 +43,8 @@ public class DLDeque<T> implements Deque<T> {
     }
 
     public T pollFirst() {
+	if ( _size == 0 )
+	    return null;
 	T retVal = _front.getCargo();
 	_front = _front.getNext();
 	_size -= 1;
@@ -81,7 +85,10 @@ public class DLDeque<T> implements Deque<T> {
 	d.addLast("be" );
 	d.addLast("self-evident");
 	System.out.println(d); // test toString()
+	
+	//testing pollFirst() removal
 	while( d.size() > 0 )
+	    System.out.println( d.pollFirst() );
 	System.out.println( d.pollFirst() );
 	System.out.println("testing addFirst()...");
 	d.addFirst("self-evident");
