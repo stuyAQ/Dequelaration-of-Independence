@@ -27,7 +27,7 @@ public class DLDeque<T> implements Deque<T> {
 	    _end = _front;
 	}
 	else {
-	    _front.setPrev(new DLLNode<T>(e,null,null));
+	    _front.setPrev(new DLLNode<T>(e,null,_front));
 	    _front = _front.getPrev();
 	    }
 	_size += 1;
@@ -72,6 +72,7 @@ public class DLDeque<T> implements Deque<T> {
     
     public static void main(String[] args){
 	DLDeque<String> d = new DLDeque<String>(); // deque-lare variable
+	System.out.println("testing addLast()...");	
 	d.addLast("we");
 	d.addLast("hold");
 	d.addLast("these" );
@@ -82,7 +83,7 @@ public class DLDeque<T> implements Deque<T> {
 	System.out.println(d); // test toString()
 	while( d.size() > 0 )
 	System.out.println( d.pollFirst() );
-
+	System.out.println("testing addFirst()...");
 	d.addFirst("self-evident");
 	d.addFirst("be" );
 	d.addFirst("to" );
