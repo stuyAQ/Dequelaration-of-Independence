@@ -20,7 +20,7 @@ public class DLDeque<T> implements Deque<T> {
 	}
 	_size += 1;
     }
-    //*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     public void addFirst(T e) {
 	if (_front == null) {
 	    _front = new DLLNode<T>(e,null,null);
@@ -52,22 +52,26 @@ public class DLDeque<T> implements Deque<T> {
     }
 
     public T peekLast() {
+	if( _size == 0 )
+	    return null;
 	return _end.getCargo();
     }
     
     
     public T peekFirst() {
+	if( _size == 0 )
+	    return null;
 	return _front.getCargo();
     }
 
     public int size() {
 	return _size;
     }
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
     public String toString(){
 	String ret = "";
 	DLLNode tmp = _front;
-	while ( tmp != null ){
+	for(int i = 0;i < size();i ++){
 	    ret += tmp.getCargo() + " ";
 	    tmp = tmp.getNext();
 	}

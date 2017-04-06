@@ -17,12 +17,17 @@ public class DequeTester {
 
 	//System.out.println("Testing contains pudding: " + table.contains("pudding"));
 	System.out.println("Peek first: " + table.peekFirst());
-	System.out.println("Removing first: " + table.pollFirst());
-	//System.out.println("Testing contains pudding: " + table.contains("pudding"));	
+	
+	System.out.println("Removing first: " + table.pollFirst());	
+	
 	System.out.println("Removing last: " + table.pollLast());
+	
 	System.out.println("Removing first: " + table.pollFirst());
+	
 	System.out.println("Removing first: " + table.pollFirst());
+	
 	System.out.println("Removing first: " + table.pollFirst());
+	
 	System.out.println("A now empty table: " + table);
 	
 	System.out.println("\n=================== Testing for Errors ===================\n"); 			   
