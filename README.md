@@ -11,22 +11,28 @@ LAB#02
 1. `addLast(T e)`
 
 Inserts an element "e" to the end of the deque.
+
 2. `addFirst(T e)`
 
 Inserts an element "e" to the front of the deque.
 In
+
 3. `pollLast()`
 
 Returns and removes the last element of the deque, returns null if deque is empty.
+
 4. `pollFirst()`
 
 Returns and removes the first element of the deque, returns null if deque is empty.
+
 5. `peekLast()`
 
 Returnsthe last element of the deque, returns null if deque is empty.
+
 6. `peekFirst()`
 
 Returns the first element of the deque, returns null if deque is empty.
+
 7.  `size()`
 
 returns the number of elements in the deque.
